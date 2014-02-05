@@ -1,0 +1,31 @@
+{
+  "name": "geojsonify",
+  "version": "0.0.1",
+  "description": "Make lines of geojson features into a valid geojson collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "geojsonio": "geojsonio.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackmad/geojsonify.git"
+  },
+  "keywords": [
+    "geojson.io",
+    "cli",
+    "pipe"
+  ],
+  "author": "David Blackman",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/blackmad/geojsonify/issues"
+  },
+  "dependencies": {
+    "opener": "~1.3.0",
+    "concat-stream": "~1.0.1",
+    "minimist": "0.0.2"
+  }
+}
