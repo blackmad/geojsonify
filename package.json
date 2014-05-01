@@ -1,13 +1,13 @@
 {
   "name": "geojsonify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make lines of geojson features into a valid geojson collection",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "geojsonio": "geojsonio.js"
+    "geojsonify": "geojsonify.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "dependencies": {
     "opener": "~1.3.0",
     "concat-stream": "~1.0.1",
-    "minimist": "0.0.2"
+    "minimist": "0.0.2",
+    "wellknown": "~0.1.2"
   }
 }
