@@ -39,7 +39,15 @@ function tryParsingAsFeatures(body) {
 
     json = wellknown(line);
 
-    if (json == null) {
+    if (json != null) {
+      // work around a bug in wellknown parsing multipolygons with no loops
+      if (json['type'] === 'MultiPolygon' &&
+        typeof(json['coordinates'][0][0][0]) == typeof(45.0)) {
+        console.error('fixing coords on multipolygon')
+        json['coordinates'] = [json['coordinates']];
+      }
+      json = { 'type': 'Feature', 'geometry': json }
+    } else {
       try {
         json = JSON.parse(line);
         if (json['type'] != 'Feature') {

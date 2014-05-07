@@ -1,7 +1,7 @@
 {
   "name": "geojsonify",
-  "version": "0.0.2",
-  "description": "Make lines of geojson features into a valid geojson collection",
+  "version": "0.0.3",
+  "description": "Make lines of geojson features or wkt into a valid geojson collection",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
