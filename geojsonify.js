@@ -50,10 +50,17 @@ function tryParsingAsFeatures(body) {
     } else {
       try {
         json = JSON.parse(line);
-        if (json['type'] != 'Feature') {
+        if (json['type'].match(/^.*(Polygon|LineString|Point)$/)) {
+          // Transform geometry into feature
+          json = {
+            "type": "Feature",
+            "geometry": json,
+            "properties": {}
+          }
+        } else if (json['type'] != 'Feature') {
           console.error('Line ' + i + ' did not look like a feature ' + JSON.stringify(json));
           failed = true;
-        } 
+        }
       } catch(e) {
         console.error('Line ' + i + ' could not parse as json: ' + e);
         console.error(line);
